@@ -9,6 +9,12 @@ enum class groupStatus
 	ARCHIVED
 };
 
+enum class inputType
+{
+	TEXT,
+	EMAIL
+};
+
 struct STUDENT
 {
 	std::string firstName;
@@ -44,3 +50,6 @@ struct SCHOOL
 	std::vector<GROUP> groups;
 	std::vector<STUDENT> students;
 };
+
+void validateStringInput(std::string str, inputType type);
+void inputStudentData(STUDENT& student);
