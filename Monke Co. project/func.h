@@ -15,21 +15,28 @@ enum class inputType
 	EMAIL
 };
 
+struct DATE
+{
+	std::string year;
+	std::string month;
+	std::string day;
+};
+
 struct STUDENT
 {
 	std::string firstName;
 	std::string lastName;
 	int studentClass;
-	std::string groupRole;
+	std::string teamRole;
 	std::string email;
 };
 
-struct GROUP
+struct TEAM
 {
 	std::string name;
 	std::string description;
-	std::string dateOfCreation;
-	std::vector<STUDENT> groupMembers;
+	DATE dateOfCreation;
+	std::vector<STUDENT> teamMembers;
 	groupStatus status;
 };
 
@@ -37,7 +44,7 @@ struct TEACHER
 {
 	std::string firstName;
 	std::string lastName;
-	std::vector<GROUP> supervisedGroups;
+	std::vector<TEAM> supervisedGroups;
 	std::string email;
 };
 
@@ -47,9 +54,10 @@ struct SCHOOL
 	std::string city;
 	std::string address;
 	std::vector<TEACHER> teachers;
-	std::vector<GROUP> groups;
+	std::vector<TEAM> groups;
 	std::vector<STUDENT> students;
 };
 
 void validateStringInput(std::string str, inputType type);
 void inputStudentData(STUDENT& student);
+void inputTeamData(TEAM& team);

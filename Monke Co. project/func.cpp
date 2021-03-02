@@ -54,9 +54,9 @@ void inputStudentData(STUDENT& student)
 
 	cin.ignore();
 
-	cout << "Enter the student's group role: "; getline(cin, student.groupRole);
+	cout << "Enter the student's group role: "; getline(cin, student.teamRole);
 
-	validateStringInput(student.groupRole, inputType::TEXT);
+	validateStringInput(student.teamRole, inputType::TEXT);
 
 	cout << endl;
 
@@ -65,3 +65,13 @@ void inputStudentData(STUDENT& student)
 	validateStringInput(student.email, inputType::EMAIL);
 	cout << endl;
 }
+
+// DONT TOUCH
+/*void inputTeamData(TEAM& team)
+{
+	cout << "Enter a team's name: "; getline(cin, team.name);
+	cout << endl;
+
+	cin.ignore();
+	cout << "Enter a team's description: "; getline(cin, team.description);
+}*/
