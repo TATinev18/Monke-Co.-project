@@ -60,8 +60,9 @@ string getSystemTime()
 	return str;
 }
 
-void inputStudentData(STUDENT& student)
+STUDENT inputStudentData()
 {
+	STUDENT student;
 	cout << "Enter the student's first name: "; cin >> student.firstName;
 
 	validateStringInput(student.firstName, inputType::TEXT);
@@ -95,6 +96,7 @@ void inputStudentData(STUDENT& student)
 
 	validateStringInput(student.email, inputType::EMAIL);
 	cout << endl;
+	return student;
 }
 
 void inputTeamData(TEAM& team)
@@ -110,6 +112,8 @@ void inputTeamData(TEAM& team)
 	team.dateOfCreation = getSystemTime();
 
 	cout << endl;
+
+	cout << "Enter the name of your mentor: "; getline(cin, team.supervisor.firstName); getline(cin, team.supervisor.lastName);
 
 	cout << "Pick a team's status. Available options are: " << endl
 		<< endl
@@ -140,4 +144,11 @@ void inputTeamData(TEAM& team)
 	default:
 		throw invalid_argument("Incorrect input");
 	}
+
 }
+
+void addStudentsToTeam(STUDENT& student)
+{
+	
+}
+	 

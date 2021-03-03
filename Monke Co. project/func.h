@@ -24,21 +24,23 @@ struct STUDENT
 	std::string email;
 };
 
+struct TEACHER
+{
+	std::string firstName;
+	std::string lastName;
+	std::vector<int> idGroups;
+	std::string email;
+};
+
 struct TEAM
 {
+	int id; 
 	std::string name;
 	std::string description;
 	std::string dateOfCreation;
 	std::vector<STUDENT> teamMembers;
 	groupStatus status;
-};
-
-struct TEACHER
-{
-	std::string firstName;
-	std::string lastName;
-	std::vector<TEAM> supervisedGroups;
-	std::string email;
+	TEACHER supervisor;
 };
 
 struct SCHOOL
@@ -54,5 +56,5 @@ struct SCHOOL
 void validateStringInput(std::string str, inputType type);
 std::string addLeadingZeroes(int num);
 std::string getSystemTime();
-void inputStudentData(STUDENT& student);
+STUDENT inputStudentData();
 void inputTeamData(TEAM& team);

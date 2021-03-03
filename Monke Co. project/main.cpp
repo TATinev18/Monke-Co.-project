@@ -4,13 +4,13 @@ using namespace std;
 
 int main()
 {
-	TEAM a;
-	try
+	/*vector<STUDENT> students;
+	for (int i = 0; i < 4; i++)
 	{
-		inputTeamData(a);
-	}
-	catch (invalid_argument a)
-	{
-		cout << "Error: " << a.what();
-	}
+		cout << i + 1 << endl;
+		students.push_back(inputStudentData());
+	}*/
+
+	TEAM teams; 
+	inputTeamData(teams);
 }
