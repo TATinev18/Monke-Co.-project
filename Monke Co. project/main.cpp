@@ -4,9 +4,13 @@ using namespace std;
 
 int main()
 {
-	TEAM mandelion;
-
-	inputTeamData(mandelion);
-
-	cout << mandelion.dateOfCreation.year << " " << mandelion.dateOfCreation.month << " " << mandelion.dateOfCreation.day;
+	TEAM a;
+	try
+	{
+		inputTeamData(a);
+	}
+	catch (invalid_argument a)
+	{
+		cout << "Error: " << a.what();
+	}
 }

@@ -15,13 +15,6 @@ enum class inputType
 	EMAIL
 };
 
-struct DATE
-{
-	std::string year;
-	std::string month;
-	std::string day;
-};
-
 struct STUDENT
 {
 	std::string firstName;
@@ -35,7 +28,7 @@ struct TEAM
 {
 	std::string name;
 	std::string description;
-	DATE dateOfCreation;
+	std::string dateOfCreation;
 	std::vector<STUDENT> teamMembers;
 	groupStatus status;
 };
@@ -59,5 +52,7 @@ struct SCHOOL
 };
 
 void validateStringInput(std::string str, inputType type);
+std::string addLeadingZeroes(int num);
+std::string getSystemTime();
 void inputStudentData(STUDENT& student);
 void inputTeamData(TEAM& team);
