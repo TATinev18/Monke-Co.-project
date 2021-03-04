@@ -10,5 +10,4 @@ int main()
 		cout << i + 1 << endl;
 		students.push_back(inputStudentData());
 	}*/
-
 }

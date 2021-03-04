@@ -62,99 +62,88 @@ string getSystemTime()
 
 void inputStudentData(STUDENT& student)
 {
-
-	cout << "Enter a student's name: "; cin >> student.firstName >> student.lastName;
+	cout << "| Enter a student's name: "; cin >> student.firstName >> student.lastName;
 	string fullName = student.firstName + student.lastName;
 	validateStringInput(fullName, inputType::TEXT);
 
-	cout << endl;
-
-	cout << "Enter the student's class: "; cin >> student.studentClass;
+	cout << "| Enter the student's class: "; cin >> student.studentClass;
 
 	if (student.studentClass < 1 or student.studentClass>12)
 	{
-		throw invalid_argument("Incorrect student class.");
+		throw invalid_argument("! Invalid student class");
 	}
 
 	cout << endl;
 
 	cin.ignore();
 
-	cout << "Enter the student's group role: "; getline(cin, student.teamRole);
+	cout << "| Enter the student's group role: "; getline(cin, student.teamRole);
 	validateStringInput(student.teamRole, inputType::TEXT);
 
 	cout << endl;
 
-	cout << "Enter the student's email: "; cin >> student.email;
+	cout << "| Enter the student's email: "; cin >> student.email;
 	validateStringInput(student.email, inputType::EMAIL);
 
 	cout << endl;
-
 }
 
 void inputTeamData(TEAM& team)
 {
 	int choice;
 
-	cout << "Enter a team's name: "; getline(cin, team.name);
+	cout << "| Enter the team's name: "; getline(cin, team.name);
 
-	cout << endl;
-
-	cout << "Enter a team's description: "; getline(cin, team.description);
+	cout << "| Enter the team's description: "; getline(cin, team.description);
 
 	team.dateOfCreation = getSystemTime();
 
-	cout << endl;
-
-	cout << "Enter the name of your mentor: "; cin >> team.supervisor.firstName >> team.supervisor.lastName;
+	cout << "| Enter the name of your mentor: "; cin >> team.supervisor.firstName >> team.supervisor.lastName;
 
 	// Different type of validation required
 
-	cout << endl;
+	cout << "| Pick the team's status. Available options are: \n\n";
 
-	cout << "Pick a team's status. Available options are: " << endl
-		<< endl
-		<< "1. ACTIVE" << endl
-		<< endl
-		<< "2. INACTIVE" << endl
-		<< endl
-		<< "3. ARCHIVED" << endl
-		<< endl
-		<< "Enter choice: "; cin >> choice;
+	cout << "+--------------+\n";
+	cout << "| 1. ACTIVE    |\n";
+	cout << "| 2. INACTIVE  |\n";
+	cout << "| 3. ARCHIVED  |\n";
+	cout << "+--------------+\n\n";
+
+	cout << "| Enter your choice: "; cin >> choice;
 
 	cout << endl;
 
 	switch (choice)
 	{
 	case 1:
-		cout << "Team status set to: ACTIVE" << endl;
+		cout << "| Team status set to: ACTIVE\n";
 		team.status = groupStatus::ACTIVE;
 		break;
 	case 2:
-		cout << "Team status set to: INACTIVE" << endl;
+		cout << "| Team status set to: INACTIVE\n";
 		team.status = groupStatus::INACTIVE;
 		break;
 	case 3:
-		cout << "Team status set to: ARCHIVED" << endl;
+		cout << "| Team status set to: ARCHIVED\n";
 		team.status = groupStatus::ARCHIVED;
 		break;
 	default:
-		throw invalid_argument("Incorrect input");
+		throw invalid_argument("Incorrect input\n");
 	}
-
 }
 
 void inputTeacherData(TEACHER& teacher)
 {
-	cout << "Enter a teacher's name: "; cin >> teacher.firstName >> teacher.lastName;
+	cout << "| Enter the teacher's name: "; cin >> teacher.firstName >> teacher.lastName;
 	
 	string fullName = teacher.firstName + teacher.lastName;
 	validateStringInput(fullName, inputType::TEXT);
 
-	cout << "Enter a teacher's email: "; cin >> teacher.email;
+	cout << "| Enter the teacher's email: "; cin >> teacher.email;
 	validateStringInput(teacher.email, inputType::EMAIL);
 
-	cout << "Select the team, this teacher supervises: ";
+	cout << "| Select the team this teacher supervises: ";
 	// W.I.P
 
 
