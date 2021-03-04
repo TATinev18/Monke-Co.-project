@@ -5,6 +5,11 @@ VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Monke Co. project", "Monke Co. project\Monke Co. project.vcxproj", "{65587E4D-9ACB-44D9-AACF-43F4E8EC489B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CB4F5DB8-E499-4E45-91FB-D0E389E6DDDC}"
+	ProjectSection(SolutionItems) = preProject
+		UnitTest1\UnitTest1.cpp = UnitTest1\UnitTest1.cpp
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
