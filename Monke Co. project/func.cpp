@@ -60,18 +60,12 @@ string getSystemTime()
 	return str;
 }
 
-STUDENT inputStudentData()
+void inputStudentData(STUDENT& student)
 {
-	STUDENT student;
-	cout << "Enter the student's first name: "; cin >> student.firstName;
 
-	validateStringInput(student.firstName, inputType::TEXT);
-
-	cout << endl;
-
-	cout << "Enter the student's last name: "; cin >> student.lastName;
-
-	validateStringInput(student.lastName, inputType::TEXT);
+	cout << "Enter a student's name: "; cin >> student.firstName >> student.lastName;
+	string fullName = student.firstName + student.lastName;
+	validateStringInput(fullName, inputType::TEXT);
 
 	cout << endl;
 
@@ -87,16 +81,15 @@ STUDENT inputStudentData()
 	cin.ignore();
 
 	cout << "Enter the student's group role: "; getline(cin, student.teamRole);
-
 	validateStringInput(student.teamRole, inputType::TEXT);
 
 	cout << endl;
 
 	cout << "Enter the student's email: "; cin >> student.email;
-
 	validateStringInput(student.email, inputType::EMAIL);
+
 	cout << endl;
-	return student;
+
 }
 
 void inputTeamData(TEAM& team)
@@ -113,7 +106,11 @@ void inputTeamData(TEAM& team)
 
 	cout << endl;
 
-	cout << "Enter the name of your mentor: "; getline(cin, team.supervisor.firstName); getline(cin, team.supervisor.lastName);
+	cout << "Enter the name of your mentor: "; cin >> team.supervisor.firstName >> team.supervisor.lastName;
+
+	// Different type of validation required
+
+	cout << endl;
 
 	cout << "Pick a team's status. Available options are: " << endl
 		<< endl
@@ -147,8 +144,19 @@ void inputTeamData(TEAM& team)
 
 }
 
-void addStudentsToTeam(STUDENT& student)
+void inputTeacherData(TEACHER& teacher)
 {
+	cout << "Enter a teacher's name: "; cin >> teacher.firstName >> teacher.lastName;
 	
+	string fullName = teacher.firstName + teacher.lastName;
+	validateStringInput(fullName, inputType::TEXT);
+
+	cout << "Enter a teacher's email: "; cin >> teacher.email;
+	validateStringInput(teacher.email, inputType::EMAIL);
+
+	cout << "Select the team, this teacher supervises: ";
+	// W.I.P
+
+
 }
 	 

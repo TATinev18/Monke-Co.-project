@@ -11,6 +11,4 @@ int main()
 		students.push_back(inputStudentData());
 	}*/
 
-	TEAM teams; 
-	inputTeamData(teams);
 }
