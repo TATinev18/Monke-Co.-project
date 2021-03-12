@@ -1,5 +1,6 @@
 #include <iostream>
 #include "func.h"
+#include "presentation.h"
 using namespace std;
 
 int main()
@@ -10,4 +11,12 @@ int main()
 		cout << i + 1 << endl;
 		students.push_back(inputStudentData());
 	}*/
+	/*mainMenu();*/
+
+	TEACHER teacher;
+	vector<TEACHER> teachers;
+
+	teacher.openFile("teachers.txt");
+	teachers = teacher.readAndSaveInVector();
+
 }
