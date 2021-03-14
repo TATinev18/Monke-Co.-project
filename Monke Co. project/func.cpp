@@ -157,32 +157,33 @@ bool TEACHER::openFile(string fileName)
 	return file.is_open();
 }
 
-vector<TEACHER> TEACHER::readAndSaveInVector()
-{
-	vector<TEACHER> teachers;
-	string arr[4];
-	TEACHER teacherRecord;
 
-	if (file.is_open())
-	{
-		while (!file.eof())
-		{
-			for (int i = 0; i < 4; i++)
-			{
-				getline(file, arr[i], ',');
-			}
-
-			// atoi converts a string to integer
-			// c_str converts a string to cstring (const char *)
-			teacherRecord.id = atoi(arr[0].c_str());
-			teacherRecord.firstName = arr[1];
-			teacherRecord.lastName = arr[2];
-			teacherRecord.email = arr[3];
-
-			teachers.push_back(teacherRecord);
-		}
-		teachers.erase(teachers.end() - 1);
-	}
-
-	return teachers;
-}
+//vector<TEACHER> TEACHER::readAndSaveInVector()
+//{
+//	vector<TEACHER> teachers;
+//	string arr[4];
+//	TEACHER teacherRecord;
+//
+//	if (file.is_open())
+//	{
+//		while (!file.eof())
+//		{
+//			for (int i = 0; i < 4; i++)
+//			{
+//				getline(file, arr[i], ',');
+//			}
+//
+//			// atoi converts a string to integer
+//			// c_str converts a string to cstring (const char *)
+//			teacherRecord.id = atoi(arr[0].c_str());
+//			teacherRecord.firstName = arr[1];
+//			teacherRecord.lastName = arr[2];
+//			teacherRecord.email = arr[3];
+//
+//			teachers.push_back(teacherRecord);
+//		}
+//		teachers.erase(teachers.end() - 1);
+//	}
+//
+//	return teachers;
+//}

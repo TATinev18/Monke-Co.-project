@@ -25,7 +25,6 @@
 //	std::string teamRole;
 //	std::string email;
 //};
-
 struct TEACHER
 {
 	int id;
@@ -35,7 +34,7 @@ struct TEACHER
 
 	std::fstream file;
 	bool openFile(std::string fileName);
-	std::vector<TEACHER> readAndSaveInVector();
+	//std::vector<TEACHER> readAndSaveInVector();
 };
 
 //struct TEAM

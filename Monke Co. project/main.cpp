@@ -17,6 +17,6 @@ int main()
 	vector<TEACHER> teachers;
 
 	teacher.openFile("teachers.txt");
-	teachers = teacher.readAndSaveInVector();
+	//teachers = teacher.readAndSaveInVector();
 
 }
