@@ -19,4 +19,12 @@ int main()
 	teacher.openFile("teachers.txt");
 	//teachers = teacher.readAndSaveInVector();
 
+	bool doPrintMenu;
+
+	do
+	{
+		doPrintMenu = mainMenu();
+	} while (doPrintMenu);
+
+	//Close file
 }
