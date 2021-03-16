@@ -53,6 +53,12 @@ namespace UnitTest1
 			editStudentEmail(student, newName);
 			Assert::AreEqual(newName, student.email);
 		};
-
+		TEST_METHOD(ShouldSuccessfullyEditStudentClass)
+		{
+			STUDENT student = { 1, "ivan", "ivanov", "a", "iiivanov18@monke.com" };
+			string newName = "B";
+			editStudentClass(student, newName);
+			Assert::AreEqual(newName, student.studentClass);
+		};
 	};
 }
