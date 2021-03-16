@@ -14,3 +14,7 @@ void deleteTeacher(std::vector <TEACHER>& teachers, int id);
 void deleteTeacherMenu(std::vector <TEACHER>& teachers);
 void deleteTeam(std::vector <TEAM>& teams, int id);
 void deleteTeamMenu(std::vector <TEAM>& teams);
+void editStudentFirstName(STUDENT& student, std::string newFirstName);
+void editStudentLastName(STUDENT& student, std::string newLastName);
+void editStudentClass(STUDENT& student, std::string newClass);
+void editStudentEmail(STUDENT& student, std::string newEmail);

@@ -48,6 +48,26 @@ bool mainMenu()
 	}
 }
 
+void editStudentFirstName(STUDENT &student, string newFirstName)
+{
+	student.firstName = newFirstName;
+}
+
+void editStudentLastName(STUDENT& student, string newLastName)
+{
+	student.lastName = newLastName;
+}
+
+void editStudentClass(STUDENT& student, string newClass)
+{
+	student.studentClass = newClass;
+}
+
+void editStudentEmail(STUDENT& student, string newEmail)
+{
+	student.email = newEmail;
+}
+
 void mainStudentMenu(vector<STUDENT> &students)
 {
 	int choice;
@@ -146,6 +166,8 @@ void deleteTeacherMenu(vector <TEACHER>& teachers)
 	cout << "\nEnter the id of the teacher that you want to delete: "; cin >> id;
 	deleteTeacher(teachers, id);
 }
+
+
 
 
 void mainTeacherMenu(vector<TEACHER> &teachers)
