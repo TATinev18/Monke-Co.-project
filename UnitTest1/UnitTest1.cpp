@@ -32,5 +32,12 @@ namespace UnitTest1
 			deleteTeam(teams, 0);
 			Assert::AreNotEqual(teams[0].id, 0);
 		};
+		TEST_METHOD(ShouldSuccessfullyEditStudentFirstName)
+		{
+			STUDENT student = {1, "ivan", "ivanov", "a", "iiivanov18@monke.com"};
+			string newName = "dimitur";
+			editStudentFirstName(student, newName);
+			Assert::AreEqual(newName, student.firstName);
+		};
 	};
 }
