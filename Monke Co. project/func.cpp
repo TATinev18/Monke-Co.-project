@@ -234,7 +234,7 @@ vector<STUDENT> readAndSaveStudentsInVector()
 
 void saveVectorInTeacherFile(std::vector<TEACHER> teachers)
 {
-	if (studentFile.is_open())
+	if (teacherFile.is_open())
 	{
 		/*teacherFile.seekp(ios::end, 0);*/
 
@@ -242,6 +242,20 @@ void saveVectorInTeacherFile(std::vector<TEACHER> teachers)
 		{
 			teacherFile << teachers[i].id << "," << teachers[i].firstName
 			<< "," << teachers[i].lastName << "," << teachers[i].email << "," << endl;
+		}
+	}
+}
+
+void saveVectorInStudentFile(std::vector<STUDENT> students)
+{
+	if (studentFile.is_open())
+	{
+		/*studentFile.seekp(ios::end, 0);*/
+
+		for (size_t i = 0; i < students.size(); i++)
+		{
+			studentFile << students[i].id << "," << students[i].firstName
+				<< "," << students[i].lastName << "," << students[i].email << "," << endl;
 		}
 	}
 }
