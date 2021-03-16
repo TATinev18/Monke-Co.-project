@@ -242,6 +242,33 @@ void deleteTeamMenu(vector <TEAM>& teams)
 	deleteTeam(teams, id);
 }
 
+void editTeamName(TEAM& team, string newName)
+{
+	team.name = newName;
+}
+
+void editTeamDescription(TEAM& team, string newDescription)
+{
+	team.description = newDescription;
+}
+
+void editTeamStatus(TEAM& team, GROUP_STATUS newStatus)
+{
+	team.status = newStatus;
+}
+
+void editTeamDateOfSetUp(TEAM& team, string newDate)
+{
+	team.dateOfCreation = newDate;
+}
+
+// editTeamMember()
+
+void editTeamTeacherId(TEAM& team, int newId)
+{
+	team.teacherId = newId;
+}
+
 
 TEACHER inputTeacherMenu()
 {

@@ -21,4 +21,9 @@ void editStudentEmail(STUDENT& student, std::string newEmail);
 void editTeacherFirstName(TEACHER& teacher, std::string newFirstName);
 void editTeacherLastName(TEACHER& teacher, std::string newLastName);
 void editTeacherEmail(TEACHER& teacher, std::string newEmail);
+void editTeamName(TEAM& team, std::string newName);
+void editTeamDescription(TEAM& team, std:: string newDescription);
+void editTeamStatus(TEAM& team, GROUP_STATUS newStatus);
+void editTeamDateOfSetUp(TEAM& team, std::string newDate);
+void editTeamTeacherId(TEAM& team, int newId);
 
