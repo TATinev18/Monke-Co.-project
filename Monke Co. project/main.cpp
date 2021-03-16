@@ -16,6 +16,8 @@ int main()
 	openTeacherFile("teachers.txt");
 	openStudentFile("students.txt");
 
+	saveVectorInTeacherFile({ { 6,"Pena","Vulcheva","pena.pornoto69@a.a" } });
+
 	bool doPrintMenu;
 
 	do
@@ -23,5 +25,6 @@ int main()
 		doPrintMenu = mainMenu();
 	} while (doPrintMenu);
 
-	//Close file
+	studentFile.close();
+	teacherFile.close();
 }

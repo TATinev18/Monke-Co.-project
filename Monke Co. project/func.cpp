@@ -155,14 +155,14 @@ void inputTeacherData(TEACHER& teacher)
 
 bool openTeacherFile(string fileName)
 {
-	teacherFile.open(fileName, ios::out | ios::in | ios::app);
+	teacherFile.open(fileName, ios::out | ios::in | ios::ate);
 
 	return teacherFile.is_open();
 }
 
 bool openStudentFile(string fileName)
 {
-	studentFile.open(fileName, ios::out | ios::in | ios::app);
+	studentFile.open(fileName, ios::out | ios::in | ios::ate);
 
 	return studentFile.is_open();
 }
@@ -172,6 +172,8 @@ vector<TEACHER> readAndSaveTeachersInVector()
 	vector<TEACHER> teachers;
 	string arr[4];
 	TEACHER teacherRecord;
+
+	teacherFile.seekg(ios::beg, 0);
 
 	if (teacherFile.is_open())
 	{
@@ -203,6 +205,8 @@ vector<STUDENT> readAndSaveStudentsInVector()
 	string arr[5];
 	STUDENT studentRecord;
 
+	studentFile.seekg(ios::beg, 0);
+
 	if (studentFile.is_open())
 	{
 		while (!studentFile.eof())
@@ -226,4 +230,18 @@ vector<STUDENT> readAndSaveStudentsInVector()
 	}
 
 	return students;
+}
+
+void saveVectorInTeacherFile(std::vector<TEACHER> teachers)
+{
+	if (studentFile.is_open())
+	{
+		/*teacherFile.seekp(ios::end, 0);*/
+
+		for (size_t i = 0; i < teachers.size(); i++)
+		{
+			teacherFile << teachers[i].id << "," << teachers[i].firstName
+			<< "," << teachers[i].lastName << "," << teachers[i].email << "," << endl;
+		}
+	}
 }

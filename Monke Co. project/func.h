@@ -48,6 +48,7 @@ bool openTeacherFile(std::string fileName);
 bool openStudentFile(std::string fileName);
 std::vector<TEACHER> readAndSaveTeachersInVector();
 std::vector<STUDENT> readAndSaveStudentsInVector();
+void saveVectorInTeacherFile(std::vector<TEACHER> teachers);
 
 struct PARTICIPANT
 {
