@@ -67,5 +67,12 @@ namespace UnitTest1
 			editTeacherFirstName(teacher, newName);
 			Assert::AreEqual(newName, teacher.firstName);
 		};
+		TEST_METHOD(ShouldSuccessfullyEditTeacherLastName)
+		{
+			TEACHER teacher = { 1, "ivan", "ivanov", "iiivanov18@monke.com" };
+			string newName = "Stoyanov";
+			editTeacherLastName(teacher, newName);
+			Assert::AreEqual(newName, teacher.lastName);
+		};
 	};
 }
