@@ -26,5 +26,18 @@ namespace UnitTest1
 			deleteTeacher(teachers, 0);
 			Assert::AreNotEqual(teachers[0].id, 0);
 		};
+		TEST_METHOD(ShouldSuccessfullyDeleteTeam)
+		{
+			vector<TEAM>teams = { { 0, "Monke", "Monkeys", GROUP_STATUS::ACTIVE,  "5.02.2021", {{1, STUDENT_ROLES::MANAGER}}, 1} , { 1, "Monke", "Monkeys", GROUP_STATUS::ACTIVE,  "5.02.2021",{ {1, STUDENT_ROLES::MANAGER}}, 1 } };
+			deleteTeam(teams, 0);
+			Assert::AreNotEqual(teams[0].id, 0);
+		};
+		TEST_METHOD(ShouldSuccessfullyEditStudentFirstName)
+		{
+			STUDENT student = {1, "ivan", "ivanov", "a", "iiivanov18@monke.com"};
+			string newName = "dimitur";
+			editStudentFirstName(student, newName);
+			Assert::AreEqual(newName, student.firstName);
+		};
 	};
 }
