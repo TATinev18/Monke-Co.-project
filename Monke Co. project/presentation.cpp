@@ -167,8 +167,20 @@ void deleteTeacherMenu(vector <TEACHER>& teachers)
 	deleteTeacher(teachers, id);
 }
 
+void editTeacherFirstName(TEACHER& teacher, string newFirstName)
+{
+	teacher.firstName = newFirstName;
+}
 
+void editTeacherLastName(TEACHER& teacher, string newLastName)
+{
+	teacher.lastName = newLastName;
+}
 
+void editTeacherEmail(TEACHER& teacher, string newEmail)
+{
+	teacher.email = newEmail;
+}
 
 void mainTeacherMenu(vector<TEACHER> &teachers)
 {

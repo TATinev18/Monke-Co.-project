@@ -18,3 +18,7 @@ void editStudentFirstName(STUDENT& student, std::string newFirstName);
 void editStudentLastName(STUDENT& student, std::string newLastName);
 void editStudentClass(STUDENT& student, std::string newClass);
 void editStudentEmail(STUDENT& student, std::string newEmail);
+void editTeacherFirstName(TEACHER& teacher, std::string newFirstName);
+void editTeacherLastName(TEACHER& teacher, std::string newLastName);
+void editTeacherEmail(TEACHER& teacher, std::string newEmail);
+
