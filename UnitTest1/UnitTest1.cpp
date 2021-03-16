@@ -81,5 +81,12 @@ namespace UnitTest1
 			editTeacherEmail (teacher, newName);
 			Assert::AreEqual(newName, teacher.email);
 		};
+		TEST_METHOD(ShouldSuccessfullyEditTeamName)
+		{
+			TEAM team = { 0, "Monke", "Monkeys", GROUP_STATUS::ACTIVE,  "5.02.2021", {{1, STUDENT_ROLES::MANAGER}}, 1};
+			string newName = "Monke2";
+			editTeamName(team, newName);
+			Assert::AreEqual(team.name, newName);
+		};
 	};
 }
