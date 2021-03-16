@@ -109,7 +109,7 @@ void deleteStudent(vector <STUDENT>& students, int id)
 {
 	for (int i = 0; i < students.size(); i++)
 	{
-		if (students[i].id = id)
+		if (students[i].id == id)
 		{
 			students.erase(students.begin()+ i);
 		}
@@ -148,7 +148,7 @@ void deleteTeacher(vector <TEACHER>& teachers, int id)
 {
 	for (int i = 0; i < teachers.size(); i++)
 	{
-		if (teachers[i].id = id)
+		if (teachers[i].id == id)
 		{
 			teachers.erase(teachers.begin() + i);
 		}
@@ -223,7 +223,7 @@ void deleteTeam(vector <TEAM> &teams, int id)
 {
 	for (int i = 0; i < teams.size(); i++)
 	{
-		if (teams[i].id = id)
+		if (teams[i].id == id)
 		{
 			teams.erase(teams.begin() + i);
 		}
