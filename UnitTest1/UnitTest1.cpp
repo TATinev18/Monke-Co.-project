@@ -109,5 +109,12 @@ namespace UnitTest1
 			editTeamDateOfSetUp(team, newName);
 			Assert::AreEqual(team.dateOfCreation, newName);
 		};
+		TEST_METHOD(ShouldSuccessfullyEditTeamTeacherId)
+		{
+			TEAM team = { 0, "Monke", "Monkeys", GROUP_STATUS::ACTIVE,  "5.02.2021", {{1, STUDENT_ROLES::MANAGER}}, 1 };
+			int newName = 0;
+			editTeamTeacherId(team, newName);
+			Assert::AreEqual(team.teacherId, newName);
+		};
 	};
 }
