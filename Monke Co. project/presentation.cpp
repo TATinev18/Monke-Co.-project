@@ -166,7 +166,21 @@ void deleteTeacherMenu(vector <TEACHER>& teachers)
 	cout << "\nEnter the id of the teacher that you want to delete: "; cin >> id;
 	deleteTeacher(teachers, id);
 }
+string statusToString(GROUP_STATUS status)
+{
+	switch (status)
+	{
+	case GROUP_STATUS::ACTIVE: return "ACTIVE";
+		break;
+	case GROUP_STATUS::INACTIVE: return "INACTIVE";
+		break;
+	case GROUP_STATUS::ARCHIVED: return "ARCHIVED";
+		break;
+	default:
+		break;
+	}
 
+}
 void editTeacherFirstName(TEACHER& teacher, string newFirstName)
 {
 	teacher.firstName = newFirstName;

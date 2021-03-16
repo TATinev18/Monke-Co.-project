@@ -26,4 +26,5 @@ void editTeamDescription(TEAM& team, std:: string newDescription);
 void editTeamStatus(TEAM& team, GROUP_STATUS newStatus);
 void editTeamDateOfSetUp(TEAM& team, std::string newDate);
 void editTeamTeacherId(TEAM& team, int newId);
+std::string statusToString(GROUP_STATUS status);
 

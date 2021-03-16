@@ -95,5 +95,12 @@ namespace UnitTest1
 			editTeamDescription(team, newName);
 			Assert::AreEqual(team.description, newName);
 		};
+		TEST_METHOD(ShouldSuccessfullyEditTeamStatus)
+		{
+			TEAM team = { 0, "Monke", "Monkeys", GROUP_STATUS::ACTIVE,  "5.02.2021", {{1, STUDENT_ROLES::MANAGER}}, 1 };
+			GROUP_STATUS newStatus = GROUP_STATUS::INACTIVE;
+			editTeamStatus(team, newStatus);
+			Assert::AreEqual(statusToString(team.status),statusToString(newStatus));
+		};
 	};
 }
