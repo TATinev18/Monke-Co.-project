@@ -7,6 +7,7 @@
 using namespace std;
 
 fstream teacherFile;
+fstream studentFile;
 
 void validateStringInput(string str, INPUT_TYPE type)
 {
@@ -152,11 +153,18 @@ void inputTeacherData(TEACHER& teacher)
 
 }
 
-bool openFile(string fileName)
+bool openTeacherFile(string fileName)
 {
 	teacherFile.open(fileName, ios::out | ios::in | ios::app);
 
 	return teacherFile.is_open();
+}
+
+bool openStudentFile(string fileName)
+{
+	studentFile.open(fileName, ios::out | ios::in | ios::app);
+
+	return studentFile.is_open();
 }
 
 vector<TEACHER> readAndSaveTeachersInVector()
@@ -187,4 +195,35 @@ vector<TEACHER> readAndSaveTeachersInVector()
 	}
 
 	return teachers;
+}
+
+vector<STUDENT> readAndSaveStudentsInVector()
+{
+	vector<STUDENT> students;
+	string arr[5];
+	STUDENT studentRecord;
+
+	if (studentFile.is_open())
+	{
+		while (!studentFile.eof())
+		{
+			for (int i = 0; i < 5; i++)
+			{
+				getline(studentFile, arr[i], ',');
+			}
+
+			// atoi converts a string to integer
+			// c_str converts a string to cstring (const char *)
+			studentRecord.id = atoi(arr[0].c_str());
+			studentRecord.firstName = arr[1];
+			studentRecord.lastName = arr[2];
+			studentRecord.studentClass = arr[3];
+			studentRecord.email = arr[4];
+
+			students.push_back(studentRecord);
+		}
+		students.erase(students.end() - 1);
+	}
+
+	return students;
 }

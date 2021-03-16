@@ -13,7 +13,8 @@ int main()
 	}*/
 	/*mainMenu();*/
 
-	openFile("teachers.txt");
+	openTeacherFile("teachers.txt");
+	openStudentFile("students.txt");
 
 	bool doPrintMenu;
 

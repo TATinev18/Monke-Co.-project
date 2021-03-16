@@ -10,7 +10,7 @@ bool mainMenu()
 	string schoolName;
 	string schoolAddress;
 	string schoolCity;
-	vector<STUDENT> students = {};
+	vector<STUDENT> students = readAndSaveStudentsInVector();
 	vector<TEACHER> teachers = readAndSaveTeachersInVector();
 	vector<TEAM> teams = {};
 

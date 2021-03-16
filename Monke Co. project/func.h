@@ -4,6 +4,7 @@
 #include <fstream>
 
 extern std::fstream teacherFile;
+extern std::fstream studentFile;
 
 enum class GROUP_STATUS
 {
@@ -43,8 +44,10 @@ struct TEACHER
 	std::string email;
 };
 
-bool openFile(std::string fileName);
+bool openTeacherFile(std::string fileName);
+bool openStudentFile(std::string fileName);
 std::vector<TEACHER> readAndSaveTeachersInVector();
+std::vector<STUDENT> readAndSaveStudentsInVector();
 
 struct PARTICIPANT
 {

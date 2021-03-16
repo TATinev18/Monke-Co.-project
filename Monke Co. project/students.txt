@@ -1,0 +1,5 @@
+1,Anelia,Apostolova,10A,AApostolova@codingburgas.bg,
+2,Iliyan,Iliev,10A,Iliyan@codingburgas.bg,
+3,Vasil,Troyanov,10G,VTroyanov@codingburgas.bg,
+4,Mariya,Dimitrova,10B,MDimitrova@codingburgas.bg,
+5,Vanya,Kaludova,10A,VKaludova@codingburgas.bg,
