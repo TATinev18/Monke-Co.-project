@@ -13,11 +13,7 @@ int main()
 	}*/
 	/*mainMenu();*/
 
-	TEACHER teacher;
-	vector<TEACHER> teachers;
-
-	teacher.openFile("teachers.txt");
-	//teachers = teacher.readAndSaveInVector();
+	openFile("teachers.txt");
 
 	bool doPrintMenu;
 

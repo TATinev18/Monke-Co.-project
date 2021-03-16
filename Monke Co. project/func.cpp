@@ -6,6 +6,8 @@
 #include "func.h"
 using namespace std;
 
+fstream teacherFile;
+
 void validateStringInput(string str, INPUT_TYPE type)
 {
 	bool flag = false;
@@ -150,40 +152,39 @@ void inputTeacherData(TEACHER& teacher)
 
 }
 
-bool TEACHER::openFile(string fileName)
+bool openFile(string fileName)
 {
-	file.open(fileName, ios::out | ios::in | ios::app);
+	teacherFile.open(fileName, ios::out | ios::in | ios::app);
 
-	return file.is_open();
+	return teacherFile.is_open();
 }
 
+vector<TEACHER> readAndSaveTeachersInVector()
+{
+	vector<TEACHER> teachers;
+	string arr[4];
+	TEACHER teacherRecord;
 
-//vector<TEACHER> TEACHER::readAndSaveInVector()
-//{
-//	vector<TEACHER> teachers;
-//	string arr[4];
-//	TEACHER teacherRecord;
-//
-//	if (file.is_open())
-//	{
-//		while (!file.eof())
-//		{
-//			for (int i = 0; i < 4; i++)
-//			{
-//				getline(file, arr[i], ',');
-//			}
-//
-//			// atoi converts a string to integer
-//			// c_str converts a string to cstring (const char *)
-//			teacherRecord.id = atoi(arr[0].c_str());
-//			teacherRecord.firstName = arr[1];
-//			teacherRecord.lastName = arr[2];
-//			teacherRecord.email = arr[3];
-//
-//			teachers.push_back(teacherRecord);
-//		}
-//		teachers.erase(teachers.end() - 1);
-//	}
-//
-//	return teachers;
-//}
+	if (teacherFile.is_open())
+	{
+		while (!teacherFile.eof())
+		{
+			for (int i = 0; i < 4; i++)
+			{
+				getline(teacherFile, arr[i], ',');
+			}
+
+			// atoi converts a string to integer
+			// c_str converts a string to cstring (const char *)
+			teacherRecord.id = atoi(arr[0].c_str());
+			teacherRecord.firstName = arr[1];
+			teacherRecord.lastName = arr[2];
+			teacherRecord.email = arr[3];
+
+			teachers.push_back(teacherRecord);
+		}
+		teachers.erase(teachers.end() - 1);
+	}
+
+	return teachers;
+}

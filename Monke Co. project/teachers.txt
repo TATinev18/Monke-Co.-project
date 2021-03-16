@@ -1,5 +1,5 @@
 1,Vanya,Velikova,VVelikova@codingburgas.bg,
-2,Kondoriano,Horhe,KHorhe@codingburgas.bg,
+2,Ivan,Dimitrov,IDimitrov@codingburgas.bg,
 3,Dimitar,Velikov,DVelikov@codingburgas.bg,
-4,Iliyan,Paynera,IPaynera@codingburgas.bg,
-5,Tsetso,Muhata,TMuhata@codingburgas.bg,
+4,Iliyan,Dinkov,IDinkov@codingburgas.bg,
+5,Georgi,Petrov,GPetrov@codingburgas.bg,

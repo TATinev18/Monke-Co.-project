@@ -11,7 +11,7 @@ bool mainMenu()
 	string schoolAddress;
 	string schoolCity;
 	vector<STUDENT> students = {};
-	vector<TEACHER> teachers = {};
+	vector<TEACHER> teachers = readAndSaveTeachersInVector();
 	vector<TEAM> teams = {};
 
 	cout << "\n+-------------------------+";
