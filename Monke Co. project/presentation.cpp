@@ -69,13 +69,13 @@ void mainStudentMenu(vector<STUDENT> &students)
 	switch (choice)
 	{
 	case 1:
-
+		students.push_back(inputStudentMenu());
 		break;
 	case 2:
-
+		
 		break;
 	case 3:
-
+		deleteStudentMenu(students);
 		break;
 	case 9:
 		//Main menu
@@ -83,6 +83,29 @@ void mainStudentMenu(vector<STUDENT> &students)
 	default:
 		break;
 	}
+}
+
+void deleteStudent(vector <STUDENT>& students, int id)
+{
+	for (int i = 0; i < students.size(); i++)
+	{
+		if (students[i].id = id)
+		{
+			students.erase(students.begin()+ i);
+		}
+	}
+}
+
+void deleteStudentMenu(vector <STUDENT> &students)
+{
+	cout << "\n+-------------------------+";
+	cout << "\n| Delete Student Menu     |";
+	cout << "\n+-------------------------+";
+
+	int id; 
+
+	cout << "\nEnter the id of the student that you want to delete: "; cin >> id;
+	deleteStudent(students, id);
 }
 
 STUDENT inputStudentMenu()
@@ -100,6 +123,30 @@ STUDENT inputStudentMenu()
 
 	return student;
 }
+
+void deleteTeacher(vector <TEACHER>& teachers, int id)
+{
+	for (int i = 0; i < teachers.size(); i++)
+	{
+		if (teachers[i].id = id)
+		{
+			teachers.erase(teachers.begin() + i);
+		}
+	}
+}
+
+void deleteTeacherMenu(vector <TEACHER>& teachers)
+{
+	cout << "\n+-------------------------+";
+	cout << "\n| Delete Teacher Menu     |";
+	cout << "\n+-------------------------+";
+
+	int id;
+
+	cout << "\nEnter the id of the teacher that you want to delete: "; cin >> id;
+	deleteTeacher(teachers, id);
+}
+
 
 void mainTeacherMenu(vector<TEACHER> &teachers)
 {
@@ -122,13 +169,13 @@ void mainTeacherMenu(vector<TEACHER> &teachers)
 	switch (choice)
 	{
 	case 1:
-
+	    teachers.push_back(inputTeacherMenu());
 		break;
 	case 2:
 
 		break;
 	case 3:
-
+		deleteTeacherMenu(teachers);
 		break;
 	case 9:
 		//Main menu
@@ -137,6 +184,30 @@ void mainTeacherMenu(vector<TEACHER> &teachers)
 		break;
 	}
 }
+
+void deleteTeam(vector <TEAM> &teams, int id)
+{
+	for (int i = 0; i < teams.size(); i++)
+	{
+		if (teams[i].id = id)
+		{
+			teams.erase(teams.begin() + i);
+		}
+	}
+}
+
+void deleteTeamMenu(vector <TEAM>& teams)
+{
+	cout << "\n+-------------------------+";
+	cout << "\n| Delete Team Menu        |";
+	cout << "\n+-------------------------+";
+
+	int id;
+
+	cout << "\nEnter the id of the team that you want to delete: "; cin >> id;
+	deleteTeam(teams, id);
+}
+
 
 TEACHER inputTeacherMenu()
 {
@@ -174,13 +245,13 @@ void mainTeamMenu(vector<TEAM> &teams)
 	switch (choice)
 	{
 	case 1:
-
+		teams.push_back(inputTeamMenu());
 		break;
 	case 2:
 
 		break;
 	case 3:
-
+		deleteTeamMenu(teams);
 		break;
 	case 9:
 		//Main menu
@@ -220,3 +291,4 @@ TEAM inputTeamMenu()
 
 	return team;
 }
+

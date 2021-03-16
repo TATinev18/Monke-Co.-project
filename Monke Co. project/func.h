@@ -45,6 +45,12 @@ struct TEACHER
 	//std::vector<TEACHER> readAndSaveInVector();
 };
 
+struct PARTICIPANT
+{
+	int studentId;
+	STUDENT_ROLES role;
+};
+
 struct TEAM
 {
 	int id; 
@@ -54,12 +60,6 @@ struct TEAM
 	std::string dateOfCreation;
 	std::vector<PARTICIPANT> teamMembers;
 	int teacherId;
-};
-
-struct PARTICIPANT
-{
-	int studentId;
-	STUDENT_ROLES role;
 };
 
 void validateStringInput(std::string str, INPUT_TYPE type);

@@ -61,33 +61,33 @@ string getSystemTime()
 	return str;
 }
 
-void inputStudentData(STUDENT& student)
-{
-	cout << "| Enter a student's name: "; cin >> student.firstName >> student.lastName;
-	string fullName = student.firstName + student.lastName;
-	validateStringInput(fullName, INPUT_TYPE::TEXT);
-
-	cout << "| Enter the student's class: "; cin >> student.studentClass;
-
-	if (student.studentClass < 1 or student.studentClass > 12)
-	{
-		throw invalid_argument("! Invalid student class");
-	}
-
-	cout << endl;
-
-	cin.ignore();
-
-	cout << "| Enter the student's group role: "; getline(cin, student.teamRole);
-	validateStringInput(student.teamRole, INPUT_TYPE::TEXT);
-
-	cout << endl;
-
-	cout << "| Enter the student's email: "; cin >> student.email;
-	validateStringInput(student.email, INPUT_TYPE::EMAIL);
-
-	cout << endl;
-}
+//void inputStudentData(STUDENT& student)
+//{
+//	cout << "| Enter a student's name: "; cin >> student.firstName >> student.lastName;
+//	string fullName = student.firstName + student.lastName;
+//	validateStringInput(fullName, INPUT_TYPE::TEXT);
+//
+//	cout << "| Enter the student's class: "; cin >> student.studentClass;
+//
+//	if (student.studentClass < 1 or student.studentClass > 12)
+//	{
+//		throw invalid_argument("! Invalid student class");
+//	}
+//
+//	cout << endl;
+//
+//	cin.ignore();
+//
+//    cout << "| Enter the student's group role: "; getline(cin, student.teamRole);
+//	validateStringInput(student.teamRole, INPUT_TYPE::TEXT);
+//
+//	cout << endl;
+//
+//	cout << "| Enter the student's email: "; cin >> student.email;
+//	validateStringInput(student.email, INPUT_TYPE::EMAIL);
+//
+//	cout << endl;
+//}
 
 void inputTeamData(TEAM& team)
 {
@@ -99,7 +99,7 @@ void inputTeamData(TEAM& team)
 
 	team.dateOfCreation = getSystemTime();
 
-	cout << "| Enter the name of your mentor: "; cin >> team.supervisor.firstName >> team.supervisor.lastName;
+	/*cout << "| Enter the name of your mentor: "; cin >> team.supervisor.firstName >> team.supervisor.lastName;*/
 
 	// Different type of validation required
 
