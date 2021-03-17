@@ -7,7 +7,9 @@ int main()
 {
 	openTeacherFile("teachers.txt");
 	openStudentFile("students.txt");
-	openStudentFile("teams.txt");
+	openTeamFile("teams.txt");
+
+	readAndSaveTeamsInVector();
 
 	bool doPrintMenu;
 

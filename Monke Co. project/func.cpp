@@ -167,11 +167,31 @@ bool openStudentFile(string fileName)
 
 	return studentFile.is_open();
 }
+
 bool openTeamFile(string fileName)
 {
 	teamFile.open(fileName, ios::out | ios::in | ios::ate);
 
 	return teamFile.is_open();
+}
+
+vector<string> splitString(string delimitedString, string delimiter)
+{
+	size_t index;
+	string token;
+	vector<string> result;
+	do
+	{
+		index = delimitedString.find(delimiter);
+
+		token = delimitedString.substr(0, index);
+
+		result.push_back(token);
+
+		delimitedString.erase(0, index + delimiter.size());
+	} while (index != string::npos);
+
+	return result;
 }
 
 vector<TEACHER> readAndSaveTeachersInVector()
@@ -237,6 +257,51 @@ vector<STUDENT> readAndSaveStudentsInVector()
 	}
 
 	return students;
+}
+
+vector<TEAM> readAndSaveTeamsInVector()
+{
+	vector<TEAM> teams;
+	string arr[5];
+	string teamMembers[4];
+	TEAM teamRecord;
+	vector<string> members;
+
+	teamFile.seekg(ios::beg, 0);
+
+	if (teamFile.is_open())
+	{
+		while (!teamFile.eof())
+		{
+			for (int i = 0; i < 5; i++)
+			{
+				getline(teamFile, arr[i], ',');
+			}
+
+			// atoi converts a string to integer
+			// c_str converts a string to cstring (const char *)
+			teamRecord.id = atoi(arr[0].c_str());
+			teamRecord.name = arr[1];
+			teamRecord.description = arr[2];
+			teamRecord.status = GROUP_STATUS::ACTIVE;
+			teamRecord.dateOfCreation = arr[4];
+
+			for (int i = 0; i < 4; i++)
+			{
+				getline(teamFile, teamMembers[i], '|');
+
+				members = splitString(teamMembers[i], "|");
+			}
+
+			teamRecord.teamMembers[0].studentId = atoi(members[0].c_str());
+			teamRecord.teamMembers[1].role = STUDENT_ROLES::MANAGER;
+
+			teams.push_back(teamRecord);
+		}
+		teams.erase(teams.end() - 1);
+	}
+
+	return teams;
 }
 
 void saveVectorInTeacherFile(std::vector<TEACHER> teachers)
