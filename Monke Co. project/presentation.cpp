@@ -166,21 +166,36 @@ void deleteTeacherMenu(vector <TEACHER>& teachers)
 	cout << "\nEnter the id of the teacher that you want to delete: "; cin >> id;
 	deleteTeacher(teachers, id);
 }
+
 string statusToString(GROUP_STATUS status)
 {
 	switch (status)
 	{
 	case GROUP_STATUS::ACTIVE: return "ACTIVE";
-		break;
 	case GROUP_STATUS::INACTIVE: return "INACTIVE";
-		break;
 	case GROUP_STATUS::ARCHIVED: return "ARCHIVED";
-		break;
 	default:
 		break;
 	}
-
 }
+
+string roleToString(STUDENT_ROLES roles)
+{
+	switch (roles)
+	{
+	case STUDENT_ROLES::BACKEND:
+		return "BACK-END";
+	case STUDENT_ROLES::FRONTEND:
+		return "FRONT-END";
+	case STUDENT_ROLES::MANAGER:
+		return "MANAGER";
+	case STUDENT_ROLES::QA:
+		return "QA";
+	default:
+		break;
+	}
+}
+
 void editTeacherFirstName(TEACHER& teacher, string newFirstName)
 {
 	teacher.firstName = newFirstName;
@@ -367,3 +382,46 @@ TEAM inputTeamMenu()
 	return team;
 }
 
+STUDENT_ROLES stringToRole(string roleStr)
+{
+	STUDENT_ROLES role;
+
+	if (roleStr == "MANAGER")
+	{
+		role = STUDENT_ROLES::MANAGER;
+	}
+	else if (roleStr == "QA")
+	{
+		role = STUDENT_ROLES::QA;
+	}
+	else if (roleStr == "BACK-END")
+	{
+		role = STUDENT_ROLES::BACKEND;
+	}
+	else if (roleStr == "FRONT-END")
+	{
+		role = STUDENT_ROLES::FRONTEND;
+	}
+
+	return role;
+}
+
+GROUP_STATUS stringToStatus(string statusStr)
+{
+	GROUP_STATUS status;
+
+	if (statusStr == "ACTIVE")
+	{
+		status = GROUP_STATUS::ACTIVE;
+	}
+	else if (statusStr == "INACTIVE")
+	{
+		status = GROUP_STATUS::INACTIVE;
+	}
+	else if (statusStr == "ARCHIVED")
+	{
+		status = GROUP_STATUS::ARCHIVED;
+	}
+
+	return status;
+}

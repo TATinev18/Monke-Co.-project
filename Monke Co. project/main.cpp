@@ -9,7 +9,23 @@ int main()
 	openStudentFile("students.txt");
 	openTeamFile("teams.txt");
 
-	readAndSaveTeamsInVector();
+	saveVectorInTeamFile
+	(
+		{
+			{
+				1,"CryptoZargan","Lorem ipsum dolor sit amet",GROUP_STATUS::ACTIVE,
+				"2021-03-17",1,
+				{
+					{
+						{2,STUDENT_ROLES::BACKEND},
+						{2,STUDENT_ROLES::FRONTEND},
+						{2,STUDENT_ROLES::QA},
+						{2,STUDENT_ROLES::MANAGER}
+					}
+				}
+			}
+		}
+	);
 
 	bool doPrintMenu;
 

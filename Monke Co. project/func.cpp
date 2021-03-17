@@ -4,6 +4,7 @@
 #include <ctime>
 #include <fstream>
 #include "func.h"
+#include "presentation.h"
 using namespace std;
 
 fstream teacherFile;
@@ -220,7 +221,7 @@ vector<TEACHER> readAndSaveTeachersInVector()
 
 			teachers.push_back(teacherRecord);
 		}
-		teachers.erase(teachers.end() - 1);
+		teachers.pop_back();
 	}
 
 	return teachers;
@@ -253,7 +254,7 @@ vector<STUDENT> readAndSaveStudentsInVector()
 
 			students.push_back(studentRecord);
 		}
-		students.erase(students.end() - 1);
+		students.pop_back();
 	}
 
 	return students;
@@ -283,33 +284,37 @@ vector<TEAM> readAndSaveTeamsInVector()
 			teamRecord.id = atoi(arr[0].c_str());
 			teamRecord.name = arr[1];
 			teamRecord.description = arr[2];
-			teamRecord.status = GROUP_STATUS::ACTIVE;
+			teamRecord.status = stringToStatus(arr[3]);
 			teamRecord.dateOfCreation = arr[4];
 
 			for (int i = 0; i < 4; i++)
 			{
 				getline(teamFile, teamMembers[i], '|');
-
-				members = splitString(teamMembers[i], "|");
 			}
 
-			teamRecord.teamMembers[0].studentId = atoi(members[0].c_str());
-			teamRecord.teamMembers[1].role = STUDENT_ROLES::MANAGER;
+			for (int i = 0; i < 4; i++)
+			{
+				members = splitString(teamMembers[i], "~");
+
+				for (int j = 0; j < 4; j++)
+				{
+					teamRecord.teamMembers[j].studentId = atoi(members[0].c_str());
+					teamRecord.teamMembers[j].role = stringToRole(members[3]);
+				}
+			}
 
 			teams.push_back(teamRecord);
 		}
-		teams.erase(teams.end() - 1);
+		teams.pop_back();
 	}
 
 	return teams;
 }
 
-void saveVectorInTeacherFile(std::vector<TEACHER> teachers)
+void saveVectorInTeacherFile(vector<TEACHER> teachers)
 {
 	if (teacherFile.is_open())
 	{
-		/*teacherFile.seekp(ios::end, 0);*/
-
 		for (size_t i = 0; i < teachers.size(); i++)
 		{
 			teacherFile << teachers[i].id << "," << teachers[i].firstName
@@ -318,17 +323,35 @@ void saveVectorInTeacherFile(std::vector<TEACHER> teachers)
 	}
 }
 
-void saveVectorInStudentFile(std::vector<STUDENT> students)
+void saveVectorInStudentFile(vector<STUDENT> students)
 {
 	if (studentFile.is_open())
 	{
-		/*studentFile.seekp(ios::end, 0);*/
-
 		for (size_t i = 0; i < students.size(); i++)
 		{
 			studentFile << students[i].id << "," << students[i].firstName
 				<< "," << students[i].lastName << ","<<students[i].studentClass
 				<< ","<< students[i].email << "," << endl;
+		}
+	}
+}
+
+void saveVectorInTeamFile(vector<TEAM> teams)
+{
+	if (teamFile.is_open())
+	{
+		for (size_t i = 0; i < teams.size(); i++)
+		{
+			teamFile << teams[i].id << "," << teams[i].name
+				<< "," << teams[i].description << "," << statusToString(teams[i].status)
+				<< "," << teams[i].dateOfCreation << "," << teams[i].teacherId << ",";
+
+			for (size_t j = 0; j < 4; j++)
+			{
+				teamFile << "|" << teams[i].teamMembers[j].studentId << "~" << roleToString(teams[i].teamMembers[j].role) << "|";
+			}
+
+			teamFile << endl;
 		}
 	}
 }
