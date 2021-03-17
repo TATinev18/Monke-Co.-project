@@ -32,19 +32,19 @@ bool mainMenu()
 	{
 	case 1:
 		mainStudentMenu(students);
-		break;
+		return true;
 	case 2:
 		mainTeacherMenu(teachers);
-		break;
+		return true;
 	case 3:
 		mainTeamMenu(teams);
-		break;
+		return true;
 	case 9:
 		return false;
 		break;
 	default:
 		cout << "\n! Invalid input! Please try again.\n";
-		break;
+		return true;
 	}
 }
 
