@@ -5,6 +5,7 @@
 
 extern std::fstream teacherFile;
 extern std::fstream studentFile;
+extern std::fstream teamFile;
 
 enum class GROUP_STATUS
 {

@@ -7,6 +7,7 @@ int main()
 {
 	openTeacherFile("teachers.txt");
 	openStudentFile("students.txt");
+	openStudentFile("teams.txt");
 
 	bool doPrintMenu;
 
@@ -17,4 +18,5 @@ int main()
 
 	studentFile.close();
 	teacherFile.close();
+	teamFile.close();
 }

@@ -8,6 +8,7 @@ using namespace std;
 
 fstream teacherFile;
 fstream studentFile;
+fstream teamFile;
 
 void validateStringInput(string str, INPUT_TYPE type)
 {
@@ -166,6 +167,12 @@ bool openStudentFile(string fileName)
 
 	return studentFile.is_open();
 }
+bool openTeamFile(string fileName)
+{
+	teamFile.open(fileName, ios::out | ios::in | ios::ate);
+
+	return teamFile.is_open();
+}
 
 vector<TEACHER> readAndSaveTeachersInVector()
 {
@@ -255,7 +262,8 @@ void saveVectorInStudentFile(std::vector<STUDENT> students)
 		for (size_t i = 0; i < students.size(); i++)
 		{
 			studentFile << students[i].id << "," << students[i].firstName
-				<< "," << students[i].lastName << "," << students[i].email << "," << endl;
+				<< "," << students[i].lastName << ","<<students[i].studentClass
+				<< ","<< students[i].email << "," << endl;
 		}
 	}
 }

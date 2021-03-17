@@ -3,3 +3,4 @@
 3,Vasil,Troyanov,10G,VTroyanov@codingburgas.bg,
 4,Mariya,Dimitrova,10B,MDimitrova@codingburgas.bg,
 5,Vanya,Kaludova,10A,VKaludova@codingburgas.bg,
+6,Dimitar,Ivanov,10V,DIvanov@codingburgas.bg,
